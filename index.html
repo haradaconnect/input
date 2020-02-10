@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <!-- Page info -->
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/default.css">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+<!--=======================
+  No script
+========================-->
+  <noscript>
+    コンテンツ内にJavaScriptを使用しているコンテンツがあります。<br>
+    ご利用のブラウザでJavaScriptの機能を無効にされている場合は、<br>
+    一部のコンテンツが正しく表示されない、もしくは正しく機能しないことがあります。<br>
+    ブラウザの設定でJavaScriptを有効にしてください。
+  </noscript>
+<!--=======================
+Header
+========================-->
+  <header>
+    <div class="container">
+      <h1><a href="#">LOGOS</a></h1>
+      <nav>
+        <div class="navItem"><a href="#CONTACT">CONTACT</a></div>
+      </nav>
+      <div class="navBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </header>
+<!--=======================
+Main
+========================-->
+  <main>
+    <section id="CONTACT">
+      <div class="container">
+        <h2>CONTACT</h2>
+        <div class="contents">
+          <form action="">
+            <div class="uiWrapper required">
+              <span>お名前</span>
+              <input type="text" name="name" autocomplete="name" placeholder="名前　太郎">
+            </div>
+            <div class="uiWrapper required">
+              <span>お名前(フリガナ)</span>
+              <input type="text" name="nameKana" placeholder="ナマエ　タロウ">
+            </div>
+            <div class="uiWrapper required">
+              <span>年齢</span>
+              <input type="number" name="age" id="age" min="0" max="200" required>
+            </div>
+            <div class="uiWrapper required">
+              <span>郵便番号</span>
+              <input type="text" name="zip01" size="10" maxlength="8" autocomplete="postal-code" pattern="\d{3}-*\d{4}" title="半角数字のみ（ハイフン不要）" placeholder="1230001" required>
+              <p class="notice"><a href="https://www.post.japanpost.jp/zipcode/" target="_blank" rel=”noopener”>郵便番号が不明の方はこちら</a></p>
+            </div>
+            <div class="uiWrapper required">
+              <span>都道府県</span>
+              <input name="pref01" id="" autocomplete="address-level1" placeholder="東京都" required>
+              </div>
+            </div>
+            <div class="uiWrapper required">
+              <span>市区町村</span>
+              <input type="text" name="addr01" size="60" autocomplete="address-level2" placeholder="千代田区" required>
+            </div>
+            <div class="uiWrapper required">
+              <span>番地・マンション名・部屋番号</span>
+              <input type="text" name="address-line1" size="60" autocomplete="address-line1" placeholder="1-2-3 ビルディング千代田 203" required>
+            </div>
+            <div class="uiWrapper">
+              <span>会社名</span>
+              <input type="text" name="organization" autocomplete="organization">
+            </div>
+            <div class="uiWrapper required">
+              <span>メールアドレス</span>
+              <input type="email" name="email" autocomplete="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="abc@xxx.yyy" required>
+            </div>
+            <div class="uiWrapper required">
+              <span>電話番号</span>
+              <input type="tel" name="tel" autocomplete="tel" pattern="\d{2,4}-\d{3,4}-\d{3,4}" title="半角数字とハイフンのみ" placeholder="03-1234-5678" required>
+            </div>
+            <div class="btnWrapper">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+<!--=======================
+Footer
+========================-->
+  <footer>
+    <div class="container">
+      ふったあ<small>&copy;shMaker</small>
+    </div>
+  </footer>
+<!--=======================
+Scripts
+========================-->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.autoKana.js"></script>
+  <script type="text/javascript" src="js/ajaxzip3.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
+</html>

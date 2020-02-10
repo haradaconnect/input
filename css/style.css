@@ -1,0 +1,256 @@
+@charset "UTF-8";
+/**********************************************
+  PC view
+**********************************************/
+/*====================================
+  Common
+====================================*/
+/*== Font ===*/
+body {
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "游ゴシック", YuGothic, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif, serif;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  color: #333;
+}
+/*== Util ===*/
+/* Flex box */
+.flexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* Container */
+.container {
+  min-width: 700px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+/* br */
+br.onlySP { display: none; }
+br.onlyPC { display: inline; }
+/*====================================
+  Header/Footer
+====================================*/
+header, header a,
+footer, footer a {
+  color: #fff;
+}
+header {
+  min-height: 100px;
+  text-align: center;
+  background-color: rgb(109, 109, 109);
+  position: relative;
+}
+/*=== Header fixed ===*/
+body {
+  padding-top: 100px;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 0;
+  }
+  header {
+    position: relative;
+  }
+}
+/*=== /Header fixed ===*/
+header .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+header h1 {
+  text-align: left;
+  margin-right: auto;
+}
+footer {
+  min-height: 20px;
+  text-align: center;
+  background-color: rgb(109, 109, 109);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/*====================================
+  Nav.
+====================================*/
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+nav .navItem {
+  padding: 0 15px;
+}
+/*=== Hamberger ===*/
+/* Nav. button */
+.navBtn {
+  display: none;
+}
+.navBtn {
+  width: 40px;
+  height: 40px;
+  background-color: #6d6d6d;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+  z-index: 20;
+  margin: auto;
+}
+header.bottom .navBtn {
+  bottom: 60px;
+}
+.open .navBtn {
+  opacity: 0.6;
+}
+.navBtn span {
+  width: 60%;
+  height: 2px;
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: 0.3s ease-in-out;
+  margin: auto;
+}
+.navBtn span:nth-of-type(1) {
+  transform: translateY(-7px);
+}
+.navBtn span:nth-of-type(3) {
+  transform: translateY(7px);
+}
+.open .navBtn span:nth-of-type(1) {
+  transform: translateY(0) rotate(45deg);
+}
+.open .navBtn span:nth-of-type(2) {
+  transform: scaleX(0);
+}
+.open .navBtn span:nth-of-type(3) {
+  transform: translateY(0) rotate(-45deg);
+}
+/*====================================
+  Main
+====================================*/
+/* Container */
+main .container {
+  border-radius: 20px;
+  box-shadow: 2px 2px 8px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px 40px;
+}
+button {
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 0;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  margin-top: 30px;
+}
+button:hover,
+button:focus {
+  color: #fff;
+  background-color: #333;
+  opacity: 1;
+}
+/**********************************************
+  TAB/SP view
+**********************************************/
+@media screen and (max-width:768px) {
+/*====================================
+  Common
+====================================*/
+  body {
+    min-width: 320px;
+  }
+/*== Util ===*/
+/* Container */
+  .container {
+    min-width: auto;
+  }
+/* br */
+  br.onlySP { display: inline; }
+  br.onlyPC { display: none; }
+/*====================================
+  Header/Footer
+====================================*/
+  header {
+    min-height: 70px;
+  }
+/*====================================
+  Nav.
+====================================*/
+/* Nav. button */
+  .navBtn {
+    display: block;
+  }
+  .open .navBtn {
+    transform: rotate(270deg);
+  }
+  .open nav {
+    transform: translateX(-100%);
+  }
+  nav {
+    width: 50%;
+    max-height: 100vh;
+    background-color: #fff;
+    box-shadow: 3px 3px 4px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 100%;
+    transition: 0.3s ease-in-out;
+    overflow-y: auto;
+    padding: 10px 0 80px;
+  }
+  header.bottom nav {
+    bottom: 42px;
+  }
+  nav a {
+    color: #333;
+  }
+  nav .navItem {
+    width: 90%;
+    padding: 10px 0;
+    margin: 0 auto;
+  }
+  nav .navItem:not(:first-of-type) {
+    border-top: 1px solid #333;
+  }
+/*====================================
+  Main
+====================================*/
+/* Container */
+  main .container {
+    width: 90%;
+    min-width: auto;
+    padding: 30px 20px 40px;
+  }
+  section {
+    padding: 20px 0;
+  }
+  section:first-of-type {
+    margin-top: 50px;
+  }
+  section:last-of-type {
+    margin-bottom: 100px;
+  }
+}
